@@ -31,7 +31,12 @@ descendats2(X,Y) :- edge(X,Y),write(Y).
 descendats2(X,Y) :- edge(X,Y), descendats2(Y,Z).
 descendats(X) :- descendats2(X,Y).
 /*7? ????tµa*/
-depth2(X,Y,0) :- edge(X,Y).
+depth2(X,Y,0) :- edge(a,Y).
 depth2(X,Y,D1) :- edge(X,Y), depth2(Z,X,D2), D1 is D2+1.
 depth(X,D) :- depth2(Y,X,D2), D is D2+1.
-/*8? ????tµa*/
+/*8? ????tµa
+A) descendats(a)
+B) depth(X,2)
+G) internal(X),not(X=a).
+?) depth(X,D)
+*/
